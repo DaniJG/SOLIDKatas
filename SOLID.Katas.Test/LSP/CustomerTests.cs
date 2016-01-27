@@ -7,7 +7,7 @@ namespace SOLID.Katas.Test.LSP
     using Katas.LSP;
 
     [TestClass]
-    public class DataLayerTests
+    public class CustomerTests
     {
         [TestMethod]
         public void PersistMultipleCustomers()
