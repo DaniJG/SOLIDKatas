@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LSP\Customer.cs" />
+    <Compile Include="LSP\DataLayer.cs" />
+    <Compile Include="LSP\EmailNotifier.cs" />
+    <Compile Include="LSP\Enquirer.cs" />
     <Compile Include="OCP\ActionExecutor.cs" />
     <Compile Include="OCP\Actions\RecordingAction.cs" />
     <Compile Include="OCP\Actions\StartRecordingAction.cs" />

@@ -50,11 +50,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LSP\DataLayerTests.cs" />
     <Compile Include="OCP\ActionExecutorTest.cs" />
     <Compile Include="SRP\UserControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SOLID.Katas\SOLID.Katas.csproj">
+      <Project>{be2519ab-00a4-49b7-b903-d4262ac7964c}</Project>
+      <Name>SOLID.Katas</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
