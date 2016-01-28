@@ -9,11 +9,11 @@ namespace SOLID.Katas.OCP
 {
     public class ActionExecutor
     {
-        private PlatformAPI platform;
+        private IPlatformAPI platform;
 
         public ActionExecutor()
         {
-            this.platform = new PlatformAPI();
+            this.platform = PlatformAPI.GetPlatformAPI();
         }
 
         public void ExecuteActions(IEnumerable<RecordingAction> actions)

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOLID.Katas.OCP.Actions
 {
-    public class StopRecordingAction : RecordingAction
+    public class DeleteRecordingAction: RecordingAction
     {
-        public DateTime StopTime { get; set; }
     }
 }

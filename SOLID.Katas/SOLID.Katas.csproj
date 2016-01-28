@@ -48,9 +48,11 @@
     <Compile Include="LSP\EmailNotifier.cs" />
     <Compile Include="LSP\Enquirer.cs" />
     <Compile Include="OCP\ActionExecutor.cs" />
+    <Compile Include="OCP\Actions\DeleteRecordingAction.cs" />
     <Compile Include="OCP\Actions\RecordingAction.cs" />
     <Compile Include="OCP\Actions\StartRecordingAction.cs" />
     <Compile Include="OCP\Actions\StopRecordingAction.cs" />
+    <Compile Include="OCP\IPlatformAPI.cs" />
     <Compile Include="OCP\PlatformAPI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

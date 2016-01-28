@@ -53,7 +53,7 @@ namespace SOLID.Katas
             controller.Create(new UserDTO { Email = "bar@bar.com", Name = "Bar2" });
             
             Console.WriteLine("Getting all users");
-            var users = controller.GetAll();
+            var users = controller.Get();
             Console.WriteLine(users.Count() == 3 ? "OK" : "FAILED");
         }
 

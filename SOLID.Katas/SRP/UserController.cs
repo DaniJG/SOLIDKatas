@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SOLID.Katas.SRP
 {
-    class UserController
+    public class UserController
     {
         private Repository<User> repository;
         private List<User> cachedItems;
@@ -16,7 +16,7 @@ namespace SOLID.Katas.SRP
         public UserController()
         {
             this.repository = new Repository<User>();
-            this.cachedItems = new List<User>();
+            this.cachedItems = null;
         }
 
         public UserDTO Create(UserDTO user)
@@ -36,7 +36,7 @@ namespace SOLID.Katas.SRP
                 .ToDto();            
         }
 
-        public IEnumerable<UserDTO> GetAll()
+        public IEnumerable<UserDTO> Get()
         {
             this.EnsureCachedItems();            
             return this.cachedItems.Select(DTOMapping.ToDto);
@@ -44,14 +44,9 @@ namespace SOLID.Katas.SRP
 
         public UserDTO Get(int id)
         {
-            this.EnsureCachedItems();
-            var cachedUser = this.cachedItems.FirstOrDefault(u => u.Id == id);
-            if (cachedUser == null)
-            {
-                cachedUser = this.repository.GetById(id);
-                this.cachedItems.Add(cachedUser);
-            }
-            return cachedUser.ToDto();
+            return this.repository
+                .GetById(id)
+                .ToDto();
         }
 
         private void EnsureCachedItems()

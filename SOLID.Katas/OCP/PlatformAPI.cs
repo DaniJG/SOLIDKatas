@@ -6,8 +6,23 @@ using System.Threading.Tasks;
 
 namespace SOLID.Katas.OCP
 {
-    public class PlatformAPI
+    public class PlatformAPI : IPlatformAPI
     {
+        private static IPlatformAPI instance;
+        public static IPlatformAPI GetPlatformAPI()
+        {
+            if (instance == null)
+            {
+                instance = new PlatformAPI();
+            }
+            return instance;
+        }
+
+        public static void SetPlatformAPI(IPlatformAPI platform)
+        {
+            instance = platform;
+        }
+
         public void StartRecording(int id, int channeId, DateTime startTime, DateTime stopTime)
         {
             Console.WriteLine("Start Recording - {0} - {1} - {2} - {3}", id, channeId, startTime, stopTime);

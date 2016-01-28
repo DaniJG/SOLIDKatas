@@ -10,7 +10,7 @@ namespace SOLID.Katas.SRP
     public class Repository<T> where T: Entity
     {
         private static Random IdGenerator = new Random();
-        private static Dictionary<string, List<T>> Values = new Dictionary<string, List<T>>();
+        private Dictionary<string, List<T>> Values = new Dictionary<string, List<T>>();
 
         public T Add(T entity)
         {            

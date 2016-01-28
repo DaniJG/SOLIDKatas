@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -51,8 +55,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="LSP\CustomerTests.cs" />
-    <Compile Include="OCP\ActionExecutorTest.cs" />
-    <Compile Include="SRP\UserControllerTest.cs" />
+    <Compile Include="OCP\ActionExecutorIntegrationTest.cs" />
+    <Compile Include="SRP\UserControllerIntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +64,9 @@
       <Project>{be2519ab-00a4-49b7-b903-d4262ac7964c}</Project>
       <Name>SOLID.Katas</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

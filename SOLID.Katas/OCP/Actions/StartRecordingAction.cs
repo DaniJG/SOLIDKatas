@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOLID.Katas.OCP.Actions
 {
-    class StartRecordingAction : RecordingAction
+    public class StartRecordingAction : RecordingAction
     {
         public int ChannelId { get; set; }
         public DateTime StartTime { get; set; }
