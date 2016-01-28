@@ -1,7 +1,7 @@
 # SOLIDKatas
 
 This repository contains the source code that can be used as the starting point for the Katas based on each of the SOLID principles.
-The katas are written in visual C# and VS projects are provided.
+The katas are written in C# and VS projects are provided.
 
 ### Single Responsibility Kata
 
