@@ -22,10 +22,10 @@ namespace SOLID.Katas.Test.OCP
         }
 
         [TestMethod]
-        public void ExecuteActions_CanExecuteSingleAction()
+        public void ARecordingCanBeCreated()
         {
             var action = new StartRecordingAction { 
-                RecordingId = 1, 
+                RecordingId = 5, 
                 ChannelId = 32, 
                 StartTime = DateTime.Now, 
                 StopTime = DateTime.Now.AddHours(1)
@@ -33,14 +33,39 @@ namespace SOLID.Katas.Test.OCP
             this.actionExecutor.ExecuteActions(new List<RecordingAction> { action });
 
             this.platformMock.Verify(p => p.StartRecording(
-                It.IsAny<int>(),
-                It.IsAny<int>(),
-                It.IsAny<DateTime>(),
-                It.IsAny<DateTime>()));
+                action.RecordingId,
+                action.ChannelId,
+                action.StartTime,
+                action.StopTime));
         }
 
         [TestMethod]
-        public void ExecuteActions_CanExecuteMultipleActions()
+        public void ARecordingCanBeCreated_AndStoppedEarlier()
+        {
+            var startAction = new StartRecordingAction
+            {
+                RecordingId = 75,
+                ChannelId = 32,
+                StartTime = DateTime.Now,
+                StopTime = DateTime.Now.AddHours(1)
+            };
+            var stopAction = new StopRecordingAction
+            {
+                RecordingId = 75,
+                StopTime = DateTime.Now.AddMinutes(30)
+            };
+            this.actionExecutor.ExecuteActions(new List<RecordingAction> { startAction, stopAction });
+
+            this.platformMock.Verify(p => p.StartRecording(
+                startAction.RecordingId,
+                startAction.ChannelId,
+                startAction.StartTime,
+                startAction.StopTime));
+            this.platformMock.Verify(p => p.StopRecording(stopAction.RecordingId, stopAction.StopTime));
+        }
+
+        [TestMethod]
+        public void ARecordingCanBeCreated_AndDeleted()
         {
             var startAction = new StartRecordingAction
             {
@@ -49,24 +74,18 @@ namespace SOLID.Katas.Test.OCP
                 StartTime = DateTime.Now,
                 StopTime = DateTime.Now.AddHours(1)
             };
-            var stopAction = new StopRecordingAction
-            {
-                RecordingId = 3,
-                StopTime = DateTime.Now
-            };
             var deleteAction = new DeleteRecordingAction
             {
-                RecordingId = 34
+                RecordingId = 1
             };
-            this.actionExecutor.ExecuteActions(new List<RecordingAction> { startAction, stopAction, deleteAction });
+            this.actionExecutor.ExecuteActions(new List<RecordingAction> { startAction, deleteAction });
 
             this.platformMock.Verify(p => p.StartRecording(
-                It.IsAny<int>(),
-                It.IsAny<int>(),
-                It.IsAny<DateTime>(),
-                It.IsAny<DateTime>()));
-            this.platformMock.Verify(p => p.StopRecording(It.IsAny<int>(), It.IsAny<DateTime>()));
-            this.platformMock.Verify(p => p.DeleteRecording(It.IsAny<int>()));
+                startAction.RecordingId,
+                startAction.ChannelId,
+                startAction.StartTime,
+                startAction.StopTime));
+            this.platformMock.Verify(p => p.DeleteRecording(deleteAction.RecordingId));
         }
     }
 }
