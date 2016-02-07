@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagrams\OCP.cd" />
     <None Include="ClassDiagrams\SRP.cd" />
   </ItemGroup>
   <ItemGroup />
