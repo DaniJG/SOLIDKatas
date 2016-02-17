@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SOLID.Katas.OCP.ActionExecutor">
+    <Position X="2.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAABAAAAAAAAAAAAAAgAAAQ=</HashCode>
+      <FileName>OCP\ActionExecutor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="platform" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SOLID.Katas.OCP.PlatformAPI">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAABAAEAAAARAgAAAAAA=</HashCode>
+      <FileName>OCP\PlatformAPI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SOLID.Katas.OCP.Actions.DeleteRecordingAction" Collapsed="true">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OCP\Actions\DeleteRecordingAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SOLID.Katas.OCP.Actions.RecordingAction" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>OCP\Actions\RecordingAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SOLID.Katas.OCP.Actions.StartRecordingAction" Collapsed="true">
+    <Position X="1" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIIAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>OCP\Actions\StartRecordingAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SOLID.Katas.OCP.Actions.StopRecordingAction" Collapsed="true">
+    <Position X="1" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OCP\Actions\StopRecordingAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SOLID.Katas.OCP.IPlatformAPI">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAEAAAAAAgAAAAAA=</HashCode>
+      <FileName>OCP\IPlatformAPI.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

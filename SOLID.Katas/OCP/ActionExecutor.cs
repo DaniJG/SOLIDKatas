@@ -22,17 +22,11 @@ namespace SOLID.Katas.OCP
             {
                 if (action is StartRecordingAction)
                 {
-                    var startAction = action as StartRecordingAction;
-                    this.platform.StartRecording(
-                        startAction.RecordingId, 
-                        startAction.ChannelId, 
-                        startAction.StartTime, 
-                        startAction.StopTime);
+                    this.ExecuteStartAction(action as StartRecordingAction);                    
                 }
                 else if (action is StopRecordingAction)
                 {
-                    var stopAction = action as StopRecordingAction;
-                    this.platform.StopRecording(stopAction.RecordingId, stopAction.StopTime);
+                    this.ExecuteStopAction(action as StopRecordingAction);
                 }
                 else
                 {
@@ -40,6 +34,20 @@ namespace SOLID.Katas.OCP
                         string.Format("Cannot execute action of type {0}", action.GetType().Name));
                 }
             }
+        }
+
+        private void ExecuteStartAction(StartRecordingAction action)
+        {
+            this.platform.StartRecording(
+                        action.RecordingId,
+                        action.ChannelId,
+                        action.StartTime,
+                        action.StopTime);
+        }
+
+        private void ExecuteStopAction(StopRecordingAction action)
+        {
+            this.platform.StopRecording(action.RecordingId, action.StopTime);
         }
     }
 }

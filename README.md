@@ -45,7 +45,7 @@ We will use it as the basis for the OCP katas.
 We have found we need to add a new action for deleting a recording.
 Let's apply the Open/Closed principle to close the `ExecuteActions` function against new types of actions.
 
-1. Add a new `IRecordingAction` interface with a method `Execute(platform IPlatform)`, then change DrawShapes to take a list of `IRecordingAction`.
+1. Add a new `IRecordingAction` interface with a method `Execute(platform IPlatform)`, then change ExecuteActions to receive a list of `IRecordingAction`.
 2. Move the code for executing each action from the `ExecuteActions` method to each action class (Create tests for each execute method of each class)
 3. Update the `ExecuteActions` method to call execute on each action of the list (Create tests for the ExecuteActions function)
 3. Add the `DeleteRecording` action class
