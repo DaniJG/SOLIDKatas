@@ -43,10 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LSP\Customer.cs" />
-    <Compile Include="LSP\DataLayer.cs" />
-    <Compile Include="LSP\EmailNotifier.cs" />
-    <Compile Include="LSP\Enquirer.cs" />
+    <Compile Include="LSP\EncryptedStream.cs" />
+    <Compile Include="LSP\Stream.cs" />
+    <Compile Include="LSP\FileManager.cs" />
     <Compile Include="OCP\ActionExecutor.cs" />
     <Compile Include="OCP\Actions\DeleteRecordingAction.cs" />
     <Compile Include="OCP\Actions\RecordingAction.cs" />

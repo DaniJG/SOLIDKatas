@@ -54,7 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="LSP\CustomerTests.cs" />
+    <Compile Include="LSP\FileManagerTests.cs" />
     <Compile Include="OCP\ActionExecutorIntegrationTest.cs" />
     <Compile Include="SRP\UserControllerIntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
